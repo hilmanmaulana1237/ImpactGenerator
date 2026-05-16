@@ -110,7 +110,8 @@ export default function Register() {
 
                             <div className="bg-white rounded-3xl shadow-2xl shadow-slate-200/50 p-8 border border-slate-100">
                                 <Form
-                                    {...store.form()}
+                                    action={store.url()}
+                                    method="post"
                                     resetOnSuccess={['password', 'password_confirmation']}
                                     disableWhileProcessing
                                     className="flex flex-col gap-4"
