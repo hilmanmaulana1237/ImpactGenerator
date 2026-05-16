@@ -135,18 +135,18 @@ export default function StorePage({ store, products, productCategories = [] }: P
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": store.name,
-        "image": store.store_photo_path ? `https://inkubatorimpact.id/storage/${store.store_photo_path}` : undefined,
+        "image": store.store_photo_path ? `https://impactgenerator.my.id/storage/${store.store_photo_path}` : undefined,
         "description": store.description,
         "address": {
             "@type": "PostalAddress",
             "streetAddress": store.address_pickup,
-            "addressLocality": "Impact",
+            "addressLocality": "Cipadung",
             "addressRegion": "Jawa Barat",
             "addressCountry": "ID"
         },
         "priceRange": "Rp 10.000 - Rp 500.000",
         "openingHours": store.open_time && store.close_time ? `Mo-Su ${store.open_time}-${store.close_time}` : undefined,
-        "url": `https://inkubatorimpact.id/marketplace/store/${store.id}`
+        "url": `https://impactgenerator.my.id/marketplace/store/${store.id}`
     };
 
     const hasCategories = productCategories.length > 0;
@@ -156,9 +156,9 @@ export default function StorePage({ store, products, productCategories = [] }: P
             <SeoHead
                 title={`${store.name} - Inkubator Impact`}
                 description={`Kunjungi ${store.name} di Inkubator Impact. ${store.description || 'Temukan produk berkualitas terbaik di sini.'}`}
-                image={store.store_photo_path ? `https://inkubatorimpact.id/storage/${store.store_photo_path}` : undefined}
+                image={store.store_photo_path ? `https://impactgenerator.my.id/storage/${store.store_photo_path}` : undefined}
                 type="profile"
-                url={`https://inkubatorimpact.id/marketplace/store/${store.id}`}
+                url={`https://impactgenerator.my.id/marketplace/store/${store.id}`}
                 schema={schema}
             />
 
