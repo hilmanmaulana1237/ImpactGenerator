@@ -104,7 +104,7 @@ export default function CourierActiveTrip({ order }: Props) {
     };
 
     const openWhatsApp = (phone: string, name: string) => {
-        const message = `Halo ${name}, saya kurir dari MudaPreneur untuk pesanan ${order.order_number}`;
+        const message = `Halo ${name}, saya kurir dari Inkubator Impact untuk pesanan ${order.order_number}`;
         window.open(`https://wa.me/${phone.replace(/^0/, '62')}?text=${encodeURIComponent(message)}`, '_blank');
         toast.success('Membuka WhatsApp...');
     };

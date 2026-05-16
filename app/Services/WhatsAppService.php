@@ -100,7 +100,7 @@ class WhatsAppService
         $message .= "*Total:* Rp " . number_format($order->total_amount, 0, ',', '.') . "\n\n";
         $message .= "*Detail Pesanan:*\n{$itemsList}\n";
         $message .= "Segera cek aplikasi untuk verifikasi!\n\n";
-        $message .= "---\n_Pesan otomatis dari CipadungMart_";
+        $message .= "---\n_Pesan otomatis dari Inkubator Impact_";
 
         return $this->sendMessage($store->contact_number, $message);
     }

@@ -1415,7 +1415,7 @@ function PosterGeneratorPanel({ store, contents, quota }: { store: Props['store'
                                         value={address}
                                         onChange={(e) => setAddress(e.target.value)}
                                         className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-gray-50 focus:bg-white transition-colors"
-                                        placeholder="Jl. Cipadung"
+                                        placeholder="Jl. Impact"
                                     />
                                 </div>
                             </div>

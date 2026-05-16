@@ -211,7 +211,7 @@ export default function AdminLayout({ children, title }: Props) {
 
                     <div className="mt-8 text-center">
                         <p className="text-xs text-muted-foreground opacity-70">
-                            Powered by UMKMCipadung
+                            Powered by Inkubator Impact
                         </p>
                     </div>
                 </div>

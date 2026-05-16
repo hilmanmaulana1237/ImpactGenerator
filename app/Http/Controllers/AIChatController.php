@@ -53,11 +53,11 @@ class AIChatController extends Controller
             'title' => 'Obrolan Baru ' . now()->format('d M H:i'),
         ]);
 
-        // Add initial greeting from Si Mudapreneur
+        // Add initial greeting from Mentor Impact
         AIChatMessage::create([
             'session_id' => $session->id,
             'role' => 'assistant',
-            'content' => "Halo Kak! Saya Si Mudapreneur, mentor bisnis siap bantu UMKM kakak. Mau diskusi soal apa hari ini?
+            'content' => "Halo Kak! Saya Mentor Impact, mentor bisnis siap bantu UMKM kakak. Mau diskusi soal apa hari ini?
 
 Bisa tanya soal:
 1. Strategi pemasaran hemat

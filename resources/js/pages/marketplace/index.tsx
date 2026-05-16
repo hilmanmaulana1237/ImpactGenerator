@@ -204,7 +204,7 @@ export default function MarketplaceIndex({ products, stores, categories, filters
 
     return (
         <AppLayout activeTab="marketplace" showBottomNav={!showAIChat}>
-            <Head title="Marketplace Cipadung" />
+            <Head title="Inkubator Impact" />
 
             {/* Fixed Header & Categories */}
             <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 bg-background">
@@ -219,8 +219,8 @@ export default function MarketplaceIndex({ products, stores, categories, filters
                                     <ShoppingBag className="w-5 h-5 text-white" />
                                 </div>
                                 <div>
-                                    <h1 className="text-2xl font-bold text-white">Marketplace Cipadung</h1>
-                                    <p className="text-white/70 text-sm">Temukan produk UMKM terbaik</p>
+                                    <h1 className="text-2xl font-bold text-white">Inkubator Impact</h1>
+                                    <p className="text-white/70 text-sm">Temukan produk terbaik</p>
                                 </div>
                             </div>
 
@@ -487,7 +487,7 @@ export default function MarketplaceIndex({ products, stores, categories, filters
                                         AI Shopping Assistant
                                         <Sparkles className="w-4 h-4 text-yellow-300" />
                                     </h2>
-                                    <p className="text-white/70 text-xs">Powered by MudaPreneur AI</p>
+                                    <p className="text-white/70 text-xs">Powered by Inkubator Impact</p>
                                 </div>
                             </div>
                             <button

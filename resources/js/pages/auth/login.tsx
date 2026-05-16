@@ -31,7 +31,7 @@ export default function Login({
 
     return (
         <>
-            <Head title="Masuk - MudaPreneur AI" />
+            <Head title="Masuk - Inkubator Impact" />
             <div className="min-h-screen flex">
                 {/* Left Side - Decorative */}
                 <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
@@ -48,8 +48,8 @@ export default function Login({
                                 <Sparkles className="w-7 h-7 text-white" />
                             </div>
                             <div>
-                                <span className="text-2xl font-bold text-white">MudaPreneur</span>
-                                <span className="text-2xl font-bold text-blue-300">.AI</span>
+                                <span className="text-2xl font-bold text-white">Inkubator</span>
+                                <span className="text-2xl font-bold text-blue-300"> Impact</span>
                             </div>
                         </Link>
 

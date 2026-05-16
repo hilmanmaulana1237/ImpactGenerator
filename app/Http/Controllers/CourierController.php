@@ -110,7 +110,7 @@ class CourierController extends Controller
 
     /**
      * Accept a delivery job.
-     * Requires courier location within Cipadung area (3km radius).
+     * Requires courier location within Impact service area (3km radius).
      */
     public function acceptJob(Request $request, Order $order)
     {
@@ -123,19 +123,19 @@ class CourierController extends Controller
             'lng.required' => 'Harap aktifkan GPS dan izinkan akses lokasi.',
         ]);
 
-        // Cipadung area validation (3km radius from center)
-        $cipadungLat = -6.9237;
-        $cipadungLng = 107.7042;
+        // Impact service area validation (3km radius from center)
+        $impactLat = -6.9237;
+        $impactLng = 107.7042;
         $maxRadiusKm = 3.0;
 
         $distance = $this->calculateDistance(
             $request->lat, $request->lng,
-            $cipadungLat, $cipadungLng
+            $impactLat, $impactLng
         );
 
         if ($distance > $maxRadiusKm) {
             return back()->withErrors([
-                'error' => 'Anda berada di luar area operasional Cipadung (radius 3km). Jarak Anda: ' . round($distance, 1) . ' km dari pusat.'
+                'error' => 'Anda berada di luar area operasional Impact (radius 3km). Jarak Anda: ' . round($distance, 1) . ' km dari pusat.'
             ]);
         }
 

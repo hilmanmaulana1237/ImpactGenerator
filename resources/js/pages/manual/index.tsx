@@ -38,7 +38,7 @@ export default function ManualBookIndex() {
                     <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
                         <Link href="/" className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900">
                             <BookOpen className="w-5 h-5" />
-                            <span className="font-semibold">Manual Book UMKM Cipadung</span>
+                            <span className="font-semibold">Manual Book Inkubator Impact</span>
                         </Link>
                         <a
                             href="https://wa.me/6287827718245"

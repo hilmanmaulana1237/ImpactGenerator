@@ -6,8 +6,8 @@ import { useCart } from '@/hooks/useLocalStorage';
 import { UmkmStore } from '@/types';
 import axios from 'axios';
 
-// Cipadung area center and radius (approximately 2km)
-const CIPADUNG_CENTER = { lat: -6.9213, lng: 107.7101 };
+// Impact service area center and radius (approximately 2km)
+const IMPACT_CENTER = { lat: -6.9213, lng: 107.7101 };
 const SERVICE_RADIUS_KM = 2;
 
 interface PageProps {
@@ -235,10 +235,10 @@ export default function CheckoutIndex() {
             const { latitude, longitude } = position.coords;
             setTempLocation({ lat: latitude, lng: longitude });
 
-            // Check if within Cipadung service area
+            // Check if within Impact service area
             const distance = calculateDistance(
                 latitude, longitude,
-                CIPADUNG_CENTER.lat, CIPADUNG_CENTER.lng
+                IMPACT_CENTER.lat, IMPACT_CENTER.lng
             );
             setIsInServiceArea(distance <= SERVICE_RADIUS_KM);
             setLocationLoading(false);
@@ -744,7 +744,7 @@ export default function CheckoutIndex() {
                             <div className="bg-success/10 border border-success/20 rounded-xl p-3 mb-3">
                                 <div className="flex items-center gap-2 text-success">
                                     <CheckCircle className="w-4 h-4" />
-                                    <span className="font-medium text-sm">Lokasi terkonfirmasi (Area Cipadung)</span>
+                                    <span className="font-medium text-sm">Lokasi terkonfirmasi (Area Impact)</span>
                                 </div>
                                 <button
                                     type="button"
@@ -780,7 +780,7 @@ export default function CheckoutIndex() {
                         </div>
 
                         <p className="text-xs text-muted-foreground mt-2">
-                            ⚠️ Layanan hanya tersedia di area Cipadung
+                            ⚠️ Layanan hanya tersedia di area Impact
                         </p>
                         {errors.shipping_address && (
                             <p className="text-sm text-destructive mt-1">{errors.shipping_address}</p>
@@ -1118,7 +1118,7 @@ export default function CheckoutIndex() {
                                         <div className="bg-success/10 border border-success/20 rounded-xl p-4 mb-4">
                                             <div className="flex items-center gap-2 text-success">
                                                 <CheckCircle className="w-5 h-5" />
-                                                <span className="font-medium">Lokasi dalam area layanan Cipadung</span>
+                                                <span className="font-medium">Lokasi dalam area layanan Impact</span>
                                             </div>
                                         </div>
                                     ) : (
@@ -1128,7 +1128,7 @@ export default function CheckoutIndex() {
                                                 <span className="font-medium">Di luar area layanan</span>
                                             </div>
                                             <p className="text-sm text-muted-foreground mt-1">
-                                                Maaf, saat ini layanan hanya tersedia di area Cipadung.
+                                                Maaf, saat ini layanan hanya tersedia di area Impact.
                                             </p>
                                         </div>
                                     )}

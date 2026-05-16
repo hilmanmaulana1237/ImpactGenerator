@@ -26,9 +26,9 @@ export default defineConfig({
             },
             includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
             manifest: {
-                name: 'MUDAPRENEUR.AI',
-                short_name: 'Mudapreneur',
-                description: 'Super App untuk Wirausaha Muda Indonesia',
+                name: 'Inkubator Impact',
+                short_name: 'Impact',
+                description: 'Platform AI untuk pengembangan bisnis dan konten promosi',
                 theme_color: '#2563EB',
                 background_color: '#F1F5F9',
                 display: 'standalone',
@@ -111,5 +111,4 @@ export default defineConfig({
         jsx: 'automatic',
     },
 });
-
 

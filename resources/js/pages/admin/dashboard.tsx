@@ -72,7 +72,7 @@ export default function AdminDashboard({ stats, recentContents, topSellers, dail
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Head title="Admin Dashboard - MudaPreneur AI" />
+            <Head title="Admin Dashboard - Inkubator Impact" />
 
             {/* Top Nav */}
             <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">

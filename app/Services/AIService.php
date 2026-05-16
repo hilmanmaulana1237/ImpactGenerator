@@ -95,7 +95,7 @@ class AIService
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . $this->apiKey,
                 'HTTP-Referer' => config('app.url', 'http://localhost'),
-                'X-Title' => config('app.name', 'MUDAPRENEUR.AI'),
+                'X-Title' => config('app.name', 'Inkubator Impact'),
                 'Content-Type' => 'application/json',
             ])->timeout(60)->post($this->baseUrl, [
                         'model' => $this->model,
@@ -135,7 +135,7 @@ class AIService
 
         if (empty($name)) {
             $prompt = "Buatkan ide produk UMKM fiktif namun realistis untuk kategori: {$category}.\n" .
-                "Konteks: Pasar desa Cipadung, Bandung. Skala ekonomi menengah ke bawah.\n\n" .
+                "Konteks: komunitas bisnis Inkubator Impact, Bandung. Skala ekonomi menengah ke bawah.\n\n" .
                 "Output HARUS JSON dengan struktur:\n" .
                 "{\n" .
                 "  \"name\": \"Nama Produk (Maks 4 kata)\",\n" .
@@ -238,14 +238,14 @@ class AIService
 
     /**
      * Get price suggestion for a category.
-     * Prices are adjusted for rural village economy (Cipadung, Bandung area)
+     * Prices are adjusted for local business economy (Impact, Bandung area)
      * Uses product name to give more specific suggestions
      */
     public function suggestPrice(string $name, string $category): array
     {
         $nameLower = strtolower($name);
 
-        // Common product prices in rural villages (Cipadung, Bandung)
+        // Common product prices in local business communities (Impact, Bandung)
         $productPrices = [
             // Kuliner
             'nasi goreng' => 12000,
@@ -420,8 +420,8 @@ class AIService
     protected function getFallbackDescription(string $name, string $category): string
     {
         $templates = [
-            'kuliner' => "🍽️ {$name} hadir untuk memanjakan lidah Anda! Dibuat dengan bahan-bahan pilihan berkualitas tinggi dan diolah menggunakan resep rahasia turun-temurun khas Cipadung. Setiap sajian disiapkan dengan penuh kehati-hatian untuk menjaga cita rasa autentik yang tak terlupakan. Cocok untuk dinikmati bersama keluarga maupun sebagai teman santai di segala suasana. Pesan sekarang dan rasakan kelezatannya! ✨",
-            'kriya' => "🎨 {$name} adalah karya handmade eksklusif yang dibuat dengan penuh dedikasi oleh pengrajin berpengalaman dari Cipadung. Setiap detail dikerjakan secara teliti menggunakan bahan pilihan, menghasilkan produk yang unik dan memiliki nilai seni tinggi. Sempurna sebagai koleksi pribadi maupun hadiah istimewa untuk orang tersayang. Miliki keindahan karya tangan asli Indonesia ini sekarang! 💝",
+            'kuliner' => "🍽️ {$name} hadir untuk memanjakan lidah Anda! Dibuat dengan bahan-bahan pilihan berkualitas tinggi dan diolah dengan standar khas Inkubator Impact. Setiap sajian disiapkan dengan penuh kehati-hatian untuk menjaga cita rasa autentik yang tak terlupakan. Cocok untuk dinikmati bersama keluarga maupun sebagai teman santai di segala suasana. Pesan sekarang dan rasakan kelezatannya! ✨",
+            'kriya' => "🎨 {$name} adalah karya handmade eksklusif yang dibuat dengan penuh dedikasi oleh pelaku usaha binaan Impact. Setiap detail dikerjakan secara teliti menggunakan bahan pilihan, menghasilkan produk yang unik dan memiliki nilai seni tinggi. Sempurna sebagai koleksi pribadi maupun hadiah istimewa untuk orang tersayang. Miliki keindahan karya tangan asli Indonesia ini sekarang! 💝",
             'jasa' => "⚡ {$name} menyediakan layanan profesional dan terpercaya untuk memenuhi kebutuhan Anda. Dikerjakan oleh tim yang berpengalaman dengan standar kualitas tinggi dan komitmen terhadap kepuasan pelanggan. Kami mengutamakan hasil yang rapi, tepat waktu, dan sesuai dengan harapan Anda. Hubungi kami sekarang untuk konsultasi gratis dan dapatkan pelayanan terbaik! ✅",
         ];
 
@@ -433,7 +433,7 @@ class AIService
      */
     public function chatWithMentor(string $message, array $history = []): string
     {
-        $systemPrompt = "Kamu adalah 'Si Mudapreneur' (Mitra Usaha Muda Entrepreneur), mentor bisnis AI profesional namun ramah untuk UMKM di desa Cipadung, Bandung.
+        $systemPrompt = "Kamu adalah mentor bisnis AI profesional namun ramah untuk pelaku usaha binaan Inkubator Impact, Bandung.
         
         Karakteristikmu:
         - Ramah, suportif, dan menggunakan bahasa Indonesia yang baik namun santai (menggunakan sapaan 'Kak' atau 'Bu/Pak').
@@ -501,7 +501,7 @@ class AIService
             }
 
             Log::error('AI Mentor Error', ['body' => $response->body()]);
-            return "Maaf kak, Si Mudapreneur lagi pusing nih (gangguan koneksi). Bisa tanya lagi nanti?";
+            return "Maaf kak, Mentor Impact lagi pusing nih (gangguan koneksi). Bisa tanya lagi nanti?";
 
         } catch (\Exception $e) {
             Log::error('AI Mentor Exception', ['message' => $e->getMessage()]);
@@ -519,7 +519,7 @@ class AIService
         Data Toko: {$storeName}
         Produk: {$productName}
         Keunggulan: {$usp}
-        Target: Warga lokal Cipadung, Bandung.
+        Target: komunitas lokal Impact, Bandung.
         
         Output dalam format JSON dengan struktur:
         {
@@ -543,9 +543,9 @@ class AIService
             return [
                 'title' => 'Promosi ' . $productName,
                 'concept' => 'Review Jujur Produk',
-                'hook' => 'Warga Cipadung Wajib Coba Ini!',
+                'hook' => 'Komunitas Impact Wajib Coba Ini!',
                 'scenes' => [['time' => '0-15s', 'visual' => 'Showcase produk close up', 'audio' => 'Musik trending']],
-                'caption' => "Yuk cobain {$productName} di {$storeName}! #KulinerCipadung #UMKMBandung"
+                'caption' => "Yuk cobain {$productName} di {$storeName}! #KulinerImpact #BisnisBandung"
             ];
         }
 
@@ -946,7 +946,7 @@ HANYA OUTPUT CAPTION, tanpa penjelasan tambahan.";
      */
     public function getTrendingItems(string $category = 'all'): array
     {
-        // Simulated trending data for Cipadung, Bandung area
+        // Simulated trending data for Impact, Bandung area
         $trends = [
             'kuliner' => [
                 ['name' => 'Seblak', 'growth' => 45, 'icon' => '🌶️'],
@@ -999,7 +999,7 @@ HANYA OUTPUT CAPTION, tanpa penjelasan tambahan.";
             return "{$num}. {$p->name} (Rp{$price}) - {$p->category} - toko: {$p->store->name}";
         })->join("\n");
 
-        $systemPrompt = "Kamu adalah asisten belanja pintar MUDAPRENEUR yang helpful dan ramah.
+        $systemPrompt = "Kamu adalah asisten belanja pintar Inkubator Impact yang helpful dan ramah.
 
 KONTEKS: User mencari produk dengan query tertentu, dan kamu sudah menemukan produk-produk yang cocok.
 
@@ -1232,7 +1232,7 @@ INGAT: Jangan tulis list panjang, cukup highlight 1-2 produk terbaik dengan alas
      */
     public function processShoppingQuery(string $message, string $catalogContext): array
     {
-        $prompt = "Kamu adalah asisten belanja pintar MUDAPRENEUR.
+        $prompt = "Kamu adalah asisten belanja pintar Inkubator Impact.
         
         DATA PRODUK (ID: Nama [Kategori] (Harga) {'Deskripsi Singkat'} (Toko)):
         {$catalogContext}

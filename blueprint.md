@@ -1,8 +1,8 @@
-MASTER PROMPT: MUDAPRENEUR.AI (LARAVEL INERTIA MONOLITH - SUPER APP EDITION)
+MASTER PROMPT: INKUBATOR IMPACT (LARAVEL INERTIA MONOLITH - SUPER APP EDITION)
 Plaintext
 
 ACT AS: Lead Principal Software Architect & Senior Full-Stack Engineer.
-PROJECT NAME: "MUDAPRENEUR.AI"
+PROJECT NAME: "INKUBATOR IMPACT"
 TYPE: Progressive Web Application (PWA) / Super App Ecosystem.
 TECH STACK: Laravel 11, Inertia.js (React), TypeScript, Tailwind CSS v4, MySQL.
 ARCHITECTURE: Modern Monolith (Server-side Routing, Client-side Rendering).

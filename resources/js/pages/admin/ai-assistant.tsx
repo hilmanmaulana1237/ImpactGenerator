@@ -151,7 +151,7 @@ export default function AIAssistant({ auth }: Props) {
                         </div>
                         <div>
                             <h1 className="text-xl font-bold tracking-tight text-white">AI Assistant</h1>
-                            <p className="text-xs text-blue-300">Super Admin Cipadung</p>
+                            <p className="text-xs text-blue-300">Super Admin Impact</p>
                         </div>
                     </div>
 

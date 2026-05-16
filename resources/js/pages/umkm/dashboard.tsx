@@ -80,7 +80,7 @@ export default function UmkmDashboard({ store, aiStats, recentContents, aiCredit
 
     return (
         <AppLayout activeTab="dashboard">
-            <Head title="Dashboard - MudaPreneur AI" />
+            <Head title="Dashboard - Inkubator Impact" />
 
             {/* Header */}
             <div className="px-4 pt-6 pb-8 bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950">

@@ -34,7 +34,7 @@ Saat menekan ambil job, sistem validasi:
 - Kurir aktif
 - Tidak sedang membawa pesanan aktif lain
 - Akun tidak ditangguhkan
-- Lokasi kurir berada dalam radius operasional Cipadung (3 km dari titik referensi)
+- Lokasi kurir berada dalam radius operasional Impact (3 km dari titik referensi)
 
 Jika lolos validasi:
 
@@ -108,7 +108,7 @@ Untuk pesanan digital, status kurir bisa `not_required`.
 ## 9. Troubleshooting Kurir
 
 - "Anda berada di luar area operasional"
-  - Pindah ke area jangkauan Cipadung lalu coba lagi.
+  - Pindah ke area jangkauan Impact lalu coba lagi.
 - "Aktifkan mode kurir terlebih dahulu"
   - Nyalakan mode kurir di radar.
 - "Selesaikan pesanan aktif Anda terlebih dahulu"

@@ -32,7 +32,7 @@ const getAIResponse = (message: string): Promise<string> => {
 4. **Daftar Legalitas** - Urus NIB (Nomor Induk Berusaha) secara online di OSS
 5. **Bangun Kehadiran Digital** - Buat akun media sosial dan daftar di marketplace
 
-💡 Dengan MUDAPRENEUR.AI, Anda bisa langsung jualan dengan mendaftar sebagai UMKM!`);
+💡 Dengan Inkubator Impact, Anda bisa langsung jualan dengan mendaftar sebagai UMKM!`);
             } else if (lowerMsg.includes('penjualan') || lowerMsg.includes('sales')) {
                 resolve(`📈 **Tips Meningkatkan Penjualan Online:**
 
@@ -43,7 +43,7 @@ const getAIResponse = (message: string): Promise<string> => {
 5. **Promo & Diskon** - Buat promo menarik di momen tertentu
 6. **Review Positif** - Minta pelanggan puas untuk memberi rating
 
-🎯 Pro tip: Manfaatkan fitur affiliator di MUDAPRENEUR.AI untuk memperluas jangkauan!`);
+🎯 Pro tip: Manfaatkan fitur affiliator di Inkubator Impact untuk memperluas jangkauan!`);
             } else if (lowerMsg.includes('marketing') || lowerMsg.includes('promosi')) {
                 resolve(`📣 **Strategi Marketing UMKM:**
 
@@ -85,7 +85,7 @@ const getAIResponse = (message: string): Promise<string> => {
 
 🌟 Pilih yang sesuai passion Anda dan mulai dari skala kecil!`);
             } else if (lowerMsg.includes('halo') || lowerMsg.includes('hai') || lowerMsg.includes('hi')) {
-                resolve(`Halo! 👋 Saya adalah asisten AI MUDAPRENEUR.AI.
+                resolve(`Halo! 👋 Saya adalah asisten AI Inkubator Impact.
 
 Saya siap membantu Anda dengan:
 - 🚀 Tips memulai bisnis UMKM
@@ -114,7 +114,7 @@ export default function AIChat() {
         {
             id: 0,
             role: 'assistant',
-            content: 'Halo! 👋 Saya adalah **Asisten AI MUDAPRENEUR.AI**.\n\nSaya siap membantu Anda dengan berbagai pertanyaan seputar bisnis UMKM. Mulai dari tips memulai usaha, strategi marketing, hingga ide bisnis kreatif.\n\nAda yang bisa saya bantu hari ini?',
+            content: 'Halo! 👋 Saya adalah **Asisten AI Inkubator Impact**.\n\nSaya siap membantu Anda dengan berbagai pertanyaan seputar bisnis UMKM. Mulai dari tips memulai usaha, strategi marketing, hingga ide bisnis kreatif.\n\nAda yang bisa saya bantu hari ini?',
             timestamp: new Date(),
         },
     ]);

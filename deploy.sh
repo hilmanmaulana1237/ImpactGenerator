@@ -1,7 +1,7 @@
 #!/bin/bash
 #===============================================================================
-#  MUDAPRENEUR.AI - Script Deploy VPS Otomatis
-#  Domain: umkmcipadung.com
+#  INKUBATOR IMPACT - Script Deploy VPS Otomatis
+#  Domain: impactgenerator.my.id
 #  Stack: Laravel 12 + Inertia.js + React + Nginx + PHP 8.3 + SQLite + SSL
 #===============================================================================
 #
@@ -11,7 +11,7 @@
 #  3. sudo bash deploy.sh
 #
 #  SEBELUM MENJALANKAN:
-#  - Pastikan domain umkmcipadung.com sudah pointing ke IP VPS
+#  - Pastikan domain impactgenerator.my.id sudah pointing ke IP VPS
 #  - Pastikan VPS menggunakan Ubuntu 22.04/24.04
 #  - Pastikan punya akses root/sudo
 #
@@ -73,7 +73,7 @@ check_root() {
 
 # ======================== KONFIRMASI AWAL ========================
 show_config() {
-    print_header "MUDAPRENEUR.AI - VPS Deployment Script"
+    print_header "INKUBATOR IMPACT - VPS Deployment Script"
     echo -e "  Domain      : ${GREEN}${DOMAIN}${NC}"
     echo -e "  App Dir     : ${GREEN}${APP_DIR}${NC}"
     echo -e "  PHP Version : ${GREEN}${PHP_VERSION}${NC}"
@@ -447,7 +447,7 @@ deploy_app() {
 
     # Update .env untuk production
     cat > .env << ENVFILE
-APP_NAME="MUDAPRENEUR.AI"
+APP_NAME="Inkubator Impact"
 APP_ENV=production
 APP_KEY=
 APP_DEBUG=false
@@ -636,7 +636,7 @@ create_update_script() {
     cat > ${APP_DIR}/update.sh << 'UPDATE_SCRIPT'
 #!/bin/bash
 #===============================================================================
-#  Script Update Aplikasi Mudapreneur.AI
+#  Script Update Aplikasi Inkubator Impact
 #  Jalankan: sudo bash /var/www/mudapreneur/update.sh
 #===============================================================================
 
@@ -645,7 +645,7 @@ set -euo pipefail
 APP_DIR="/var/www/mudapreneur"
 PHP_VERSION="8.3"
 
-echo "🔄 Mulai update MUDAPRENEUR.AI..."
+echo "🔄 Mulai update INKUBATOR IMPACT..."
 
 cd ${APP_DIR}
 
@@ -716,7 +716,7 @@ create_backup_script() {
     cat > ${APP_DIR}/backup.sh << 'BACKUP_SCRIPT'
 #!/bin/bash
 #===============================================================================
-#  Script Backup Database & Storage Mudapreneur.AI
+#  Script Backup Database & Storage Inkubator Impact
 #  Jalankan: sudo bash /var/www/mudapreneur/backup.sh
 #  Otomatis via cron: 0 2 * * * bash /var/www/mudapreneur/backup.sh
 #===============================================================================
@@ -768,7 +768,7 @@ show_summary() {
     echo ""
     echo -e "${GREEN}╔══════════════════════════════════════════════════════════════╗${NC}"
     echo -e "${GREEN}║                                                              ║${NC}"
-    echo -e "${GREEN}║        🎉  DEPLOYMENT SELESAI - MUDAPRENEUR.AI  🎉         ║${NC}"
+    echo -e "${GREEN}║        🎉  DEPLOYMENT SELESAI - INKUBATOR IMPACT 🎉        ║${NC}"
     echo -e "${GREEN}║                                                              ║${NC}"
     echo -e "${GREEN}╚══════════════════════════════════════════════════════════════╝${NC}"
     echo ""

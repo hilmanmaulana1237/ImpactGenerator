@@ -97,7 +97,7 @@ class DummyUserSeeder extends Seeder
         // Array untuk menyimpan data user
         $userData = [];
         $userData[] = "==============================================";
-        $userData[] = "DAFTAR AKUN USER DUMMY - MUDAPRENEUR";
+        $userData[] = "DAFTAR AKUN USER DUMMY - INKUBATOR IMPACT";
         $userData[] = "==============================================";
         $userData[] = "";
         $userData[] = "Password untuk semua akun: password123";

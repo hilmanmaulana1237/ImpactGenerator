@@ -86,7 +86,7 @@ export default function AIMentorChat({ session, messages: initialMessages }: Pro
                         <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full animate-pulse"></span>
                     </div>
                     <div>
-                        <h1 className="font-bold text-gray-900 text-sm tracking-tight">Si Mudapreneur</h1>
+                        <h1 className="font-bold text-gray-900 text-sm tracking-tight">Mentor Impact</h1>
                         <p className="text-[10px] text-blue-600 font-medium bg-blue-50 px-2 py-0.5 rounded-full w-fit flex items-center gap-1">
                             <Sparkles className="w-3 h-3" /> AI Business Mentor
                         </p>

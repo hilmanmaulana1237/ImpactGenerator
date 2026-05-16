@@ -48,7 +48,7 @@ export default function ProfileIndex() {
 
     return (
         <AppLayout activeTab="account">
-            <Head title="Profil - MudaPreneur AI" />
+            <Head title="Profil - Inkubator Impact" />
 
             {/* Profile Header */}
             <div className="px-4 pt-6 pb-8 bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950">
@@ -201,7 +201,7 @@ export default function ProfileIndex() {
 
             {/* App Info */}
             <div className="px-4 py-4 text-center">
-                <p className="text-xs text-muted-foreground">MudaPreneur.AI v2.0.0</p>
+                <p className="text-xs text-muted-foreground">Inkubator Impact v2.0.0</p>
                 <p className="text-xs text-muted-foreground">AI Content Generator untuk UMKM</p>
             </div>
         </AppLayout>

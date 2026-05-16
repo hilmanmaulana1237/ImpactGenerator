@@ -1,4 +1,4 @@
-# Manual Book Aplikasi UMKM Cipadung
+# Manual Book Aplikasi Inkubator Impact
 
 Silakan pilih manual sesuai peran pengguna:
 

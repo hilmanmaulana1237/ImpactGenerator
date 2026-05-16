@@ -10,9 +10,9 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" contdent="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
-        <meta name="apple-mobile-web-app-title" content="Mudapreneur">
+        <meta name="apple-mobile-web-app-title" content="Inkubator Impact">
 
-        <title inertia>{{ config('app.name', 'MUDAPRENEUR.AI') }}</title>
+        <title inertia>{{ config('app.name', 'Inkubator Impact') }}</title>
 
        <link rel="icon" href="{{ asset('favicon.ico') }}?v=2" sizes="any">
 <link rel="icon" href="{{ asset('favicon.svg') }}?v=2" type="image/svg+xml">
@@ -32,4 +32,3 @@
         @inertia
     </body>
 </html>
-

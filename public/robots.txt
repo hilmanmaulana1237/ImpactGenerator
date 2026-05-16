@@ -6,4 +6,4 @@ Disallow: /umkm/
 Disallow: /storage/*.zip
 Disallow: /storage/*.backup
 
-Sitemap: https://umkmcipadung.com/sitemap.xml
+Sitemap: https://impactgenerator.my.id/sitemap.xml

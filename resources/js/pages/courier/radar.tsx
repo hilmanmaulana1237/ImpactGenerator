@@ -52,9 +52,9 @@ export default function CourierRadar({ availableJobs, isActive, activeOrder, cou
 
     const [isRefreshing, setIsRefreshing] = useState(false);
 
-    // Cipadung center coordinates for distance calculation
-    const CIPADUNG_LAT = -6.9237;
-    const CIPADUNG_LNG = 107.7042;
+    // Impact service area coordinates for distance calculation
+    const IMPACT_LAT = -6.9237;
+    const IMPACT_LNG = 107.7042;
     const MAX_RADIUS_KM = 3.0;
 
     // Haversine formula to calculate distance
@@ -69,13 +69,13 @@ export default function CourierRadar({ availableJobs, isActive, activeOrder, cou
         return Math.round(R * c * 10) / 10; // Round to 1 decimal
     };
 
-    // Check if current location is within Cipadung area
-    const isWithinCipadung = currentLocation
-        ? calculateDistance(currentLocation.lat, currentLocation.lng, CIPADUNG_LAT, CIPADUNG_LNG) <= MAX_RADIUS_KM
+    // Check if current location is within Impact service area
+    const isWithinImpact = currentLocation
+        ? calculateDistance(currentLocation.lat, currentLocation.lng, IMPACT_LAT, IMPACT_LNG) <= MAX_RADIUS_KM
         : false;
 
-    const distanceFromCipadung = currentLocation
-        ? calculateDistance(currentLocation.lat, currentLocation.lng, CIPADUNG_LAT, CIPADUNG_LNG)
+    const distanceFromImpact = currentLocation
+        ? calculateDistance(currentLocation.lat, currentLocation.lng, IMPACT_LAT, IMPACT_LNG)
         : null;
 
     const toggleActive = () => {
@@ -217,9 +217,9 @@ export default function CourierRadar({ availableJobs, isActive, activeOrder, cou
             return;
         }
 
-        // Frontend validation - block if outside Cipadung
-        if (!isWithinCipadung) {
-            toast.error(`🚫 Anda di luar area Cipadung! Jarak: ${distanceFromCipadung} km (maksimal 3 km)`);
+        // Frontend validation - block if outside Impact service area
+        if (!isWithinImpact) {
+            toast.error(`🚫 Anda di luar area Impact! Jarak: ${distanceFromImpact} km (maksimal 3 km)`);
             return;
         }
 
@@ -587,13 +587,13 @@ export default function CourierRadar({ availableJobs, isActive, activeOrder, cou
                         </div>
 
                         {/* Info - Dynamic based on distance */}
-                        {locationStatus === 'obtained' && distanceFromCipadung !== null && (
-                            <div className={`rounded-xl p-3 mb-4 ${isWithinCipadung ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-300'}`}>
-                                <p className={`text-xs ${isWithinCipadung ? 'text-green-800' : 'text-red-800'}`}>
-                                    {isWithinCipadung ? (
-                                        <>✅ <strong>OK!</strong> Anda dalam area Cipadung ({distanceFromCipadung} km dari pusat)</>
+                        {locationStatus === 'obtained' && distanceFromImpact !== null && (
+                            <div className={`rounded-xl p-3 mb-4 ${isWithinImpact ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-300'}`}>
+                                <p className={`text-xs ${isWithinImpact ? 'text-green-800' : 'text-red-800'}`}>
+                                    {isWithinImpact ? (
+                                        <>✅ <strong>OK!</strong> Anda dalam area Impact ({distanceFromImpact} km dari pusat)</>
                                     ) : (
-                                        <>🚫 <strong>DI LUAR AREA!</strong> Jarak Anda: {distanceFromCipadung} km (maksimal 3 km)</>
+                                        <>🚫 <strong>DI LUAR AREA!</strong> Jarak Anda: {distanceFromImpact} km (maksimal 3 km)</>
                                     )}
                                 </p>
                             </div>
@@ -602,7 +602,7 @@ export default function CourierRadar({ availableJobs, isActive, activeOrder, cou
                         {locationStatus !== 'obtained' && (
                             <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-4">
                                 <p className="text-xs text-amber-800">
-                                    <strong>⚠️ Penting:</strong> Anda harus berada di area Cipadung (radius 3km) untuk mengambil pesanan ini.
+                                    <strong>⚠️ Penting:</strong> Anda harus berada di area Impact (radius 3km) untuk mengambil pesanan ini.
                                 </p>
                             </div>
                         )}
@@ -617,14 +617,14 @@ export default function CourierRadar({ availableJobs, isActive, activeOrder, cou
                             </button>
                             <button
                                 onClick={confirmAcceptJob}
-                                disabled={locationStatus !== 'obtained' || !isWithinCipadung}
-                                className={`flex-1 py-3 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${isWithinCipadung
+                                disabled={locationStatus !== 'obtained' || !isWithinImpact}
+                                className={`flex-1 py-3 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${isWithinImpact
                                     ? 'bg-gradient-to-r from-primary to-blue-600 text-white hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]'
                                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                     } disabled:opacity-50 disabled:cursor-not-allowed`}
                             >
                                 <Zap className="w-4 h-4" />
-                                {isWithinCipadung ? 'Ambil' : 'Di Luar Area'}
+                                {isWithinImpact ? 'Ambil' : 'Di Luar Area'}
                             </button>
                         </div>
                     </div>

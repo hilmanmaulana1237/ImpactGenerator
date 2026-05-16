@@ -31,9 +31,9 @@ export default function About() {
                                     <Award className="w-4 h-4 text-yellow-300" />
                                     Innovillage 2025
                                 </div>
-                                <h2 className="text-3xl font-extrabold mb-3 tracking-tight">Marketplace Cipadung</h2>
+                                <h2 className="text-3xl font-extrabold mb-3 tracking-tight">Inkubator Impact</h2>
                                 <p className="text-blue-100 text-sm leading-relaxed max-w-xs mx-auto">
-                                    Platform digital kebanggaan warga Cipadung untuk memajukan ekonomi lokal.
+                                    Platform digital Inkubator Impact untuk membantu bisnis bertumbuh dengan teknologi.
                                 </p>
                             </div>
                         </div>
@@ -47,7 +47,7 @@ export default function About() {
                                 <div>
                                     <h3 className="font-bold text-slate-800 text-lg mb-2">Misi Sosial</h3>
                                     <p className="text-slate-600 text-sm leading-relaxed">
-                                        Kami hadir untuk menjembatani UMKM Cipadung dengan pasar yang lebih luas. Setiap transaksi di sini adalah dukungan nyata bagi pertumbuhan ekonomi desa kita.
+                                        Inkubator Impact hadir untuk menjembatani bisnis dengan pasar yang lebih luas. Setiap transaksi di sini adalah dukungan nyata bagi pertumbuhan ekonomi yang berdampak.
                                     </p>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@ export default function About() {
                                 <div>
                                     <h3 className="font-bold text-slate-800 text-lg mb-2">Mitra Resmi</h3>
                                     <p className="text-slate-600 text-sm leading-relaxed">
-                                        Kolaborasi strategis antara <strong>Peserta Lomba Innovillage</strong> dan <strong>Kelurahan Cipadung</strong>. Menciptakan ekosistem digital yang aman, terpercaya, dan berdampak langsung bagi masyarakat.
+                                        Kolaborasi strategis antara <strong>Peserta Lomba Innovillage</strong> dan <strong>Inkubator Impact</strong>. Menciptakan ekosistem digital yang aman, terpercaya, dan berdampak langsung bagi masyarakat.
                                     </p>
                                 </div>
                             </div>

@@ -23,7 +23,7 @@ export default function MobileLayout({
 
                     <div className="py-6 text-center">
                         <p className="text-[10px] text-slate-400 font-medium">
-                            Powered by MudaPreneur.AI
+                            Powered by Inkubator Impact
                         </p>
                     </div>
                 </div>

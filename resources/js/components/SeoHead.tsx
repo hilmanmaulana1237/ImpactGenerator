@@ -11,13 +11,13 @@ interface SeoProps {
 
 export default function SeoHead({
     title,
-    description = 'Marketplace UMKM Cipadung - Belanja produk lokal berkualitas langsung dari UMKM desa.',
-    image = 'https://umkmcipadung.com/images/hero-marketplace.png',
+    description = 'Inkubator Impact - Platform AI Content Generator untuk bisnis yang ingin bertumbuh.',
+    image = 'https://impactgenerator.my.id/images/hero-marketplace.png',
     type = 'website',
     url,
     schema
 }: SeoProps) {
-    const siteName = 'Marketplace Cipadung';
+    const siteName = 'Inkubator Impact';
     const currentUrl = url || typeof window !== 'undefined' ? window.location.href : '';
 
     return (

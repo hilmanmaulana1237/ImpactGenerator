@@ -59,12 +59,12 @@ export default function ProductDetail({ product, relatedProducts }: Props) {
         "@context": "https://schema.org",
         "@type": "Product",
         "name": product.name,
-        "image": product.image_path ? `https://umkmcipadung.com/storage/${product.image_path}` : undefined,
-        "description": product.description || `Beli ${product.name} dari toko ${product.store.name} di Marketplace Cipadung.`,
+        "image": product.image_path ? `https://impactgenerator.my.id/storage/${product.image_path}` : undefined,
+        "description": product.description || `Beli ${product.name} dari toko ${product.store.name} di Inkubator Impact.`,
         "sku": `P-${product.id}`,
         "offers": {
             "@type": "Offer",
-            "url": `https://umkmcipadung.com/marketplace/product/${product.id}`,
+            "url": `https://impactgenerator.my.id/marketplace/product/${product.id}`,
             "priceCurrency": "IDR",
             "price": product.price,
             "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
@@ -78,11 +78,11 @@ export default function ProductDetail({ product, relatedProducts }: Props) {
     return (
         <AppLayout activeTab="marketplace" showBottomNav={false}>
             <SeoHead
-                title={`${product.name} - Jual Murah Cipadung`}
-                description={`Jual ${product.name} termurah di Cipadung. Harga ${formatPrice(Number(product.price))}. Stok ${product.stock > 0 ? 'Tersedia' : 'Habis'}. Pesan sekarang via Marketplace Cipadung.`}
-                image={product.image_path ? `https://umkmcipadung.com/storage/${product.image_path}` : undefined}
+                title={`${product.name} - Inkubator Impact`}
+                description={`${product.name} tersedia di Inkubator Impact. Harga ${formatPrice(Number(product.price))}. Stok ${product.stock > 0 ? 'Tersedia' : 'Habis'}.`}
+                image={product.image_path ? `https://impactgenerator.my.id/storage/${product.image_path}` : undefined}
                 type="product"
-                url={`https://umkmcipadung.com/marketplace/product/${product.id}`}
+                url={`https://impactgenerator.my.id/marketplace/product/${product.id}`}
                 schema={schema}
             />
 
@@ -267,4 +267,3 @@ export default function ProductDetail({ product, relatedProducts }: Props) {
         </AppLayout>
     );
 }
-

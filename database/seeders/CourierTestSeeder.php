@@ -42,17 +42,17 @@ class CourierTestSeeder extends Seeder
         $faker = \Faker\Factory::create('id_ID');
         $createdCount = 0;
 
-        // Cipadung center (where courier is assumed to be)
-        $cipadungLat = -6.9237;
-        $cipadungLng = 107.7042;
+        // Impact service area center (where courier is assumed to be)
+        $impactLat = -6.9237;
+        $impactLng = 107.7042;
 
         foreach ($stores as $index => $store) {
             $products = $store->products()->active()->inStock()->get();
             if ($products->isEmpty()) continue;
 
-            // Calculate distance from Cipadung center
+            // Calculate distance from Impact service area center
             $distance = $this->calculateDistance(
-                $cipadungLat, $cipadungLng,
+                $impactLat, $impactLng,
                 $store->latitude, $store->longitude
             );
 
@@ -70,8 +70,8 @@ class CourierTestSeeder extends Seeder
                 'courier_fee' => Order::COURIER_COMMISSION_AMOUNT,
                 'payment_proof_path' => 'payment_proofs/default.jpg',
                 'shipping_address' => $faker->address,
-                'shipping_lat' => $cipadungLat + ($faker->randomFloat(6, -0.005, 0.005)),
-                'shipping_lng' => $cipadungLng + ($faker->randomFloat(6, -0.005, 0.005)),
+                'shipping_lat' => $impactLat + ($faker->randomFloat(6, -0.005, 0.005)),
+                'shipping_lng' => $impactLng + ($faker->randomFloat(6, -0.005, 0.005)),
                 'created_at' => now()->subMinutes(rand(5, 60)),
             ]);
 

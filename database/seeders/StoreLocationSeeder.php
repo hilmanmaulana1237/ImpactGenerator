@@ -15,9 +15,9 @@ class StoreLocationSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->command->info('Seeding stores with varied locations around Cipadung...');
+        $this->command->info('Seeding stores with varied locations around Impact service area...');
 
-        // Base Location (Cipadung)
+        // Base Location (Impact service area)
         $baseLat = -6.923700;
         $baseLng = 107.704200;
 

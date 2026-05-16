@@ -23,7 +23,7 @@ class DummyDataSeeder extends Seeder
             // ADMIN ACCOUNT
             // =====================================================
             $admin = User::create([
-                'name' => 'Admin MudaPreneur',
+                'name' => 'Admin Inkubator Impact',
                 'email' => 'admin@demo.com',
                 'password' => Hash::make('password'),
                 'role' => 'admin',
@@ -59,7 +59,7 @@ class DummyDataSeeder extends Seeder
                     'user_id' => $owner->id,
                     'name' => $storeName,
                     'slug' => Str::slug($storeName) . '-' . Str::random(5),
-                    'description' => 'UMKM ' . $storeName . ' menyediakan produk & layanan terbaik di Cipadung.',
+                    'description' => 'UMKM ' . $storeName . ' menyediakan produk & layanan terbaik bersama Inkubator Impact.',
                     'address_pickup' => $faker->address,
                 ]);
 

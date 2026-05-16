@@ -143,7 +143,7 @@ export default function ManualBookReport() {
                         <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                             Laporan Manual Book
                             <br />
-                            Aplikasi UMKM Cipadung
+                            Aplikasi Inkubator Impact
                         </h1>
 
                         <p className="mt-4 text-slate-600 text-base md:text-lg leading-relaxed max-w-3xl">

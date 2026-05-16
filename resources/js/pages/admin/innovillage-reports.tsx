@@ -495,7 +495,7 @@ export default function InnovvillageReports({
                 {/* Footer */}
                 <div className="text-center py-6 text-sm text-gray-400 print:py-2">
                     <p>Laporan ini digenerate otomatis oleh sistem {platformSummary.app_name}</p>
-                    <p className="mt-1">Powered by UMKMCipadung | {platformSummary.competition}</p>
+                    <p className="mt-1">Powered by Inkubator Impact | {platformSummary.competition}</p>
                 </div>
             </div>
         </AdminLayout>

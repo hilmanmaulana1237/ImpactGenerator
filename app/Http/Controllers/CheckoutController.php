@@ -310,7 +310,7 @@ class CheckoutController extends Controller
                 $message .= "*Total:* Rp " . number_format($order->total_amount, 0, ',', '.') . "\n\n";
                 $message .= "*Detail Pesanan:*\n{$itemsList}\n";
                 $message .= "Segera cek aplikasi untuk verifikasi!\n\n";
-                $message .= "---\n_Pesan otomatis dari UMKM Cipadung_";
+                $message .= "---\n_Pesan otomatis dari Inkubator Impact_";
                 
                 \Illuminate\Support\Facades\Http::withHeaders([
                     'Authorization' => $token,

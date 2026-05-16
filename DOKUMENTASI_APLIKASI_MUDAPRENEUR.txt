@@ -1,17 +1,17 @@
 ================================================================================
-                    DOKUMENTASI LENGKAP APLIKASI MUDAPRENEUR.AI
-                     Platform Marketplace UMKM Digital Cipadung
+                    DOKUMENTASI LENGKAP APLIKASI INKUBATOR IMPACT
+                     Platform Digital Inkubator Impact
 ================================================================================
 
 ================================================================================
                             1. INFORMASI UMUM APLIKASI
 ================================================================================
 
-NAMA APLIKASI       : MUDAPRENEUR.AI
+NAMA APLIKASI       : INKUBATOR IMPACT
 JENIS APLIKASI      : Progressive Web Application (PWA) / Super App Ecosystem
 TUJUAN              : Membangun ekosistem digital lengkap yang menghubungkan 
-                      UMKM lokal Cipadung dengan pembeli, kurir, dan affiliator
-LOKASI TARGET       : Kelurahan Cipadung, Kota Bandung, Jawa Barat, Indonesia
+                      pelaku usaha Impact dengan pembeli, kurir, dan affiliator
+LOKASI TARGET       : Komunitas Impact, Kota Bandung, Jawa Barat, Indonesia
 
 
 --------------------------------------------------------------------------------
@@ -248,7 +248,7 @@ C. LANDING PAGE GENERATOR
    • User pilih template dan isi data toko
    • AI generate deskripsi otomatis
    • Maksimal 10 produk per landing page
-   • URL custom: www.umkmcipadung.com/toko/nama-toko
+   • URL custom: www.impactgenerator.my.id/toko/nama-toko
    • Bisa share ke media sosial
    • Bisa regenerate dengan template berbeda
 
@@ -517,7 +517,7 @@ N. API_SETTINGS (Pengaturan API)
 
 2.  AI Price Suggestion
     Input: nama produk, kategori
-    Output: rentang harga yang sesuai untuk ekonomi Cipadung
+    Output: rentang harga yang sesuai untuk ekonomi Impact
 
 3.  AI Business Insights
     Input: data toko (penjualan, produk, traffic)
@@ -585,7 +585,7 @@ Konfigurasi tersimpan di database (api_settings) dengan enkripsi untuk API keys.
                       7. STRUKTUR FOLDER PROYEK
 ================================================================================
 
-UMKMCipadung-main/
+InkubatorImpact-main/
 ├── app/
 │   ├── Actions/          - Aksi spesifik (Fortify)
 │   ├── Console/          - Artisan commands
@@ -789,7 +789,7 @@ ADMIN:
 1. AI-POWERED UMKM TOOLS
    • Pertama di Indonesia: AI yang khusus untuk UMKM desa
    • Generate konten promosi tanpa perlu skill desain/marketing
-   • Harga yang disarankan sesuai ekonomi lokal Cipadung
+   • Harga yang disarankan sesuai ekonomi lokal Impact
 
 2. SUPER APP ECOSYSTEM
    • Satu aplikasi untuk semua kebutuhan: beli, jual, antar, promosi
@@ -831,9 +831,9 @@ ADMIN:
                            10. KONTAK & TIM
 ================================================================================
 
-NAMA PROYEK     : MUDAPRENEUR.AI
+NAMA PROYEK     : INKUBATOR IMPACT
 KOMPETISI       : Innovillage
-LOKASI          : Kelurahan Cipadung, Kota Bandung
+LOKASI          : Komunitas Impact, Kota Bandung
 
 ================================================================================
                           AKHIR DOKUMENTASI

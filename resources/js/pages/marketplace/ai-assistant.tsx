@@ -37,7 +37,7 @@ export default function AIShoppingAssistant({ suggestedQueries = [
         {
             id: 0,
             type: 'ai',
-            content: 'Hai! 👋 Aku adalah AI Shopping Assistant MudaPreneur.\n\nAku udah baca semua produk dari toko UMKM lokal, jadi tinggal bilang aja mau beli apa, budget berapa, atau cocok buat siapa - aku akan carikan produk terbaik yang sesuai! 🛍️✨',
+            content: 'Hai! 👋 Aku adalah AI Shopping Assistant Inkubator Impact.\n\nAku udah baca semua produk dari toko UMKM lokal, jadi tinggal bilang aja mau beli apa, budget berapa, atau cocok buat siapa - aku akan carikan produk terbaik yang sesuai! 🛍️✨',
             timestamp: new Date(),
         }
     ]);
@@ -130,7 +130,7 @@ export default function AIShoppingAssistant({ suggestedQueries = [
                                 AI Shopping Assistant
                                 <Sparkles className="w-4 h-4 text-yellow-300" />
                             </h1>
-                            <p className="text-white/70 text-xs">Powered by MudaPreneur AI</p>
+                            <p className="text-white/70 text-xs">Powered by Inkubator Impact</p>
                         </div>
                     </div>
                 </div>

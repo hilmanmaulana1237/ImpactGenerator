@@ -30,7 +30,7 @@ export default function AIMentorIndex({ sessions }: Props) {
                     <Link href="/umkm/dashboard" className="p-2 bg-white/20 rounded-lg backdrop-blur-sm text-white">
                         <ChevronRight className="w-5 h-5 rotate-180" />
                     </Link>
-                    <h1 className="text-xl font-bold text-white">Si Mudapreneur AI</h1>
+                    <h1 className="text-xl font-bold text-white">Mentor Impact AI</h1>
                     <div className="w-9 h-9" />
                 </div>
 

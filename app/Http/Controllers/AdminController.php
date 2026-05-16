@@ -928,7 +928,7 @@ class AdminController extends Controller
             'total_revenue' => Order::where('status', 'completed')->sum('total_amount'),
         ];
 
-        $systemPrompt = "Kamu adalah Asisten AI untuk Admin Marketplace Cipadung - platform digital untuk UMKM desa.
+        $systemPrompt = "Kamu adalah Asisten AI untuk Admin Inkubator Impact - platform digital untuk pengembangan bisnis.
 
 DATA MARKETPLACE SAAT INI:
 - Total Toko UMKM: {$stats['total_stores']} ({$stats['active_stores']} aktif)
@@ -977,7 +977,7 @@ INGAT: Kamu membantu perangkat desa yang mungkin tidak familiar dengan teknologi
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . $config['api_key'],
                 'HTTP-Referer' => config('app.url'),
-                'X-Title' => 'Admin Assistant - Marketplace Cipadung',
+                'X-Title' => 'Admin Assistant - Inkubator Impact',
                 'Content-Type' => 'application/json',
             ])->timeout(45)->post($config['base_url'], [
                         'model' => $config['model'],
@@ -1382,7 +1382,7 @@ INGAT: Kamu membantu perangkat desa yang mungkin tidak familiar dengan teknologi
 
         // === PLATFORM SUMMARY (For Report Header) ===
         $platformSummary = [
-            'app_name' => 'Marketplace Cipadung',
+            'app_name' => 'Inkubator Impact',
             'competition' => 'Innovillage 2025',
             'report_date' => now()->format('d F Y'),
             'report_time' => now()->format('H:i'),

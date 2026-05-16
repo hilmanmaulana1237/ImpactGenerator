@@ -24,7 +24,7 @@ export default function AffiliateShare({ affiliateCode }: Props) {
     const shareToWhatsApp = () => {
         if (affiliateCode) {
             const message = encodeURIComponent(
-                `🎉 Gunakan kode promo "${affiliateCode}" untuk belanja di MUDAPRENEUR.AI dan dapatkan harga spesial!\n\n👉 Kunjungi sekarang!`
+                `🎉 Gunakan kode promo "${affiliateCode}" untuk belanja di Inkubator Impact dan dapatkan harga spesial!\n\n👉 Kunjungi sekarang!`
             );
             window.open(`https://wa.me/?text=${message}`, '_blank');
         }

@@ -20,7 +20,7 @@ $request = Request::create('/umkm/ai-content/generate-poster-copywriting', 'POST
     'price' => 'Rp 15.000',
     'slogan' => 'Enak, Murah, Nagih!',
     'phone' => '083197008165',
-    'address' => 'Jl. Cipadung',
+    'address' => 'Jl. Impact',
 ]);
 
 $controller = app(AIContentController::class);

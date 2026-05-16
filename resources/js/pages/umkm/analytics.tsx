@@ -219,7 +219,7 @@ export default function Analytics({ store, salesStats, aiStats, topProducts }: P
                                         <MessageSquare className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <p className="text-sm font-medium text-gray-700">Chat dengan Si Mudapreneur</p>
+                                        <p className="text-sm font-medium text-gray-700">Chat dengan Mentor Impact</p>
                                         <p className="text-xs text-gray-500">{aiStats.messages} pesan terkirim</p>
                                     </div>
                                 </div>

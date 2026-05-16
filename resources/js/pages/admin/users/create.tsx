@@ -206,7 +206,7 @@ export default function CreateUser() {
                                     type="text"
                                     value={formData.store_address}
                                     onChange={(e) => handleChange('store_address', e.target.value)}
-                                    placeholder="Contoh: Jl. Cipadung No. 123, Cibiru"
+                                    placeholder="Contoh: Jl. Impact No. 123"
                                     className="w-full mt-1 px-4 py-3 border border-purple-200 rounded-xl bg-white"
                                 />
                             </div>

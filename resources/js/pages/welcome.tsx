@@ -1,610 +1,299 @@
-import { Head, Link, usePage } from '@inertiajs/react';
-import {
-    ArrowRight,
-    Award,
-    BookOpen,
-    Building2,
-    CalendarDays,
-    Check,
-    Compass,
-    GraduationCap,
-    Handshake,
-    Landmark,
-    Layers,
-    Mail,
-    MapPin,
-    Network,
-    Phone,
-    Quote,
-    Rocket,
-    ShieldCheck,
-    Target,
-    Users,
-} from 'lucide-react';
-
+import SeoHead from '@/components/SeoHead';
 import { type SharedData } from '@/types';
+import { Head, Link, usePage } from '@inertiajs/react';
+import { ArrowRight, Bot, Image, MessageCircle, Quote, Sparkles, Star, Video, Wand2, Zap } from 'lucide-react';
 
 export default function Welcome({ canRegister = true }: { canRegister?: boolean }) {
     const { auth } = usePage<SharedData>().props;
 
-    const primaryHref = auth.user ? '/umkm/dashboard' : canRegister ? '/register' : '/login';
-    const secondaryHref = '#journey';
+    const dashboardHref = auth.user ? '/umkm/dashboard' : canRegister ? '/register' : '/login';
 
-    const impactHighlights = [
-        'Kesiapan Founder',
-        'Tim IMPACT',
-        'Akses Investor',
-        'Go-to-Market',
-        'Perjalanan Startup',
-        'Visi Kami',
-        'Klinik Growth',
-        'Portofolio',
-        'Jaringan Riset',
-        'Workspace',
-        'Komunitas',
-        'Demo Day',
-        'Persiapan Pendanaan',
-        'Validasi Pasar',
-        'Dukungan Penuh',
-    ];
-
-    const reasons = [
+    const features = [
         {
-            icon: Target,
-            title: 'Model impact-first',
-            body: 'Fokus pada nilai berkelanjutan, bukan vanity growth.',
+            icon: Video,
+            title: 'AI Video Generator',
+            description: 'Buat video promosi profesional dari foto produk Anda secara otomatis dengan teknologi AI.',
+            color: 'from-blue-500 to-cyan-500',
+            bg: 'bg-blue-500/10',
         },
         {
-            icon: Landmark,
-            title: 'Akses investor',
-            body: 'Perkenalan hangat ke modal dan angel yang tepat.',
+            icon: Image,
+            title: 'AI Poster Maker',
+            description: 'Generate poster promosi menarik untuk media sosial langsung dari template AI.',
+            color: 'from-cyan-500 to-teal-500',
+            bg: 'bg-cyan-500/10',
         },
         {
-            icon: Users,
-            title: 'Mentoring berbasis operator',
-            body: 'Founder nyata, playbook nyata, hasil nyata.',
+            icon: Bot,
+            title: 'AI Business Mentor',
+            description: 'Konsultasi bisnis dengan AI mentor yang paham strategi pemasaran dan operasional.',
+            color: 'from-emerald-500 to-teal-500',
+            bg: 'bg-emerald-500/10',
         },
         {
-            icon: ShieldCheck,
-            title: 'Milestone jelas',
-            body: 'Checkpoint berbasis data di tiap fase pertumbuhan.',
+            icon: Wand2,
+            title: 'AI Copywriting',
+            description: 'Generate deskripsi produk, caption sosial media, dan script video yang menjual.',
+            color: 'from-amber-400 to-orange-500',
+            bg: 'bg-amber-500/10',
         },
     ];
 
-    const workSteps = [
-        {
-            number: '01',
-            title: 'Daftar & Match',
-            body: 'Kami memilih founder dengan visi dan DNA eksekusi.',
-        },
-        {
-            number: '02',
-            title: 'Validasi & Bangun',
-            body: 'Bukti pasar, penguatan produk, dan traksi awal.',
-        },
-        {
-            number: '03',
-            title: 'Scale & Pendanaan',
-            body: 'Akses investor, playbook pertumbuhan, persiapan pendanaan.',
-        },
+    const steps = [
+        { number: '01', title: 'Daftar Akun', description: 'Buat akun dan masuk ke dashboard bisnis.' },
+        { number: '02', title: 'Upload Foto', description: 'Upload foto produk atau bahan visual yang ingin dipromosikan.' },
+        { number: '03', title: 'Generate Konten', description: 'Pilih video, poster, atau copywriting sesuai kebutuhan.' },
+        { number: '04', title: 'Publish & Promosi', description: 'Download hasilnya dan bagikan ke media sosial.' },
     ];
-
-    const ecosystem = [
-        {
-            icon: Network,
-            title: 'Jaringan Investor',
-            body: 'Akses hangat ke angel dan fund yang sejalan dengan impact.',
-        },
-        {
-            icon: GraduationCap,
-            title: 'Dewan Mentor',
-            body: 'Operator, founder, dan ahli domain yang siap membantu.',
-        },
-        {
-            icon: Building2,
-            title: 'Workspace & Komunitas',
-            body: 'Hub hybrid dengan kultur founder berperforma tinggi.',
-        },
-        {
-            icon: Handshake,
-            title: 'Dukungan Funding',
-            body: 'Perbaikan pitch, akses grant, dan kesiapan demo day.',
-        },
-    ];
-
-    const team = [
-        {
-            name: 'Yogi Saputra',
-            role: 'Chief Executive Officer',
-            body: 'Mengorkestrasi visi besar dan strategi ekosistem IMPACT Inc.',
-        },
-        {
-            name: 'Awang Dody Kardeli',
-            role: 'Chief Technology Officer',
-            body: 'Arsitek solusi inovatif dan platform teknologi inkubasi.',
-        },
-        {
-            name: 'Hilman Maulana',
-            role: 'Core Team',
-            body: 'Mendorong operasi program, riset pasar, dan aktivasi founder.',
-        },
-        {
-            name: 'M. Dhaffin Fawwaz',
-            role: 'Core Team',
-            body: 'Menguatkan eksekusi komunitas, event, dan pendampingan tim.',
-        },
-        {
-            name: 'Satria Agung P.',
-            role: 'Core Team',
-            body: 'Mendukung koordinasi portofolio dan jalur pertumbuhan startup.',
-        },
-    ];
-
-    const journey = [
-        ['1', 'Spark', 'Validasi ide dan founder-market fit.'],
-        ['2', 'Build', 'MVP, pengguna awal, dan kejelasan produk.'],
-        ['3', 'Launch', 'Eksekusi go-to-market dan traksi.'],
-        ['4', 'Scale', 'Pertumbuhan revenue, sistem operasi, dan hiring.'],
-        ['5', 'Fund', 'Fundraising strategis dan ekspansi.'],
-    ];
-
-    const portfolios = ['NovaTech', 'AgriPulse', 'EduSpark', 'HealthLink', 'CivicLab', 'RetailFlow'];
 
     const testimonials = [
         {
-            quote: 'IMPACT membuka akses investor yang sebelumnya sulit kami jangkau. Seed round kami selesai dalam 10 minggu.',
-            name: 'Darren Satria',
-            role: 'CEO, NovaTech',
+            name: 'Founder Kuliner',
+            role: 'Peserta Inkubator Impact',
+            quote: 'Video promosi yang tadinya butuh banyak proses, sekarang bisa dibuat cepat dan tetap terlihat profesional.',
         },
         {
-            quote: 'Struktur sprint memaksa kami fokus. Revenue kami naik dua kali dalam empat bulan.',
-            name: 'Maya Lestari',
-            role: 'Founder, HealthLink',
+            name: 'Owner Brand Lokal',
+            role: 'Peserta Inkubator Impact',
+            quote: 'Poster dan caption langsung siap dipakai. Tim kami jadi lebih fokus ke jualan dan validasi pasar.',
+        },
+        {
+            name: 'Pelaku Jasa',
+            role: 'Peserta Inkubator Impact',
+            quote: 'AI mentor membantu kami menyusun strategi promosi yang lebih rapi dan mudah dieksekusi.',
         },
     ];
 
-    const events = [
-        ['Sprint Validasi Startup', 'Inkubator', 'May 24, 2026'],
-        ['Klinik Growth Playbook', 'Pertumbuhan', 'June 7, 2026'],
-        ['Meetup Founder & Investor', 'Komunitas', 'June 18, 2026'],
-    ];
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Inkubator Impact',
+        url: 'https://impactgenerator.my.id',
+        description: 'Platform AI Content Generator untuk membantu bisnis membuat konten promosi video, poster, dan copywriting secara otomatis.',
+    };
 
     return (
         <>
-            <Head title="IMPACT Inc. Inkubator Startup">
-                <meta
-                    name="description"
-                    content="IMPACT Inc. adalah inkubator startup untuk founder yang ingin tumbuh cepat, menggalang pendanaan dengan cerdas, dan menciptakan dampak terukur."
-                />
-            </Head>
+            <SeoHead
+                title="Inkubator Impact - AI Content Generator"
+                description="Buat video promosi, poster, dan copywriting secara otomatis dengan AI bersama Inkubator Impact."
+                schema={schema}
+            />
+            <Head title="Inkubator Impact" />
 
-            <div className="min-h-screen bg-[#f6fbfb] text-slate-950">
-                <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/88 text-white backdrop-blur">
-                    <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-                        <Link href="/" className="flex items-center gap-3">
-                            <img src="/images/impact-inc-logo.png" alt="Logo IMPACT Inc." className="h-10 w-10 object-contain" />
-                            <div className="leading-tight">
-                                <p className="font-black tracking-tight">IMPACT<span className="text-cyan-300">Inc.</span></p>
-                                <p className="text-xs font-medium text-white/55">Inkubator Startup</p>
-                            </div>
-                        </Link>
+            <div className="min-h-screen bg-slate-950 text-white" style={{ fontFamily: "'Inter', 'Outfit', system-ui, sans-serif" }}>
+                <nav className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/85 backdrop-blur-2xl">
+                    <div className="mx-auto max-w-6xl px-5 sm:px-8">
+                        <div className="flex h-16 items-center justify-between">
+                            <Link href="/" className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg shadow-cyan-500/20">
+                                    <Sparkles className="h-5 w-5 text-white" />
+                                </div>
+                                <span className="text-lg font-bold tracking-tight">
+                                    Inkubator<span className="text-cyan-300">Impact</span>
+                                </span>
+                            </Link>
 
-                        <div className="hidden items-center gap-7 text-sm font-medium text-white/70 md:flex">
-                            <a href="#vision" className="hover:text-cyan-200">Visi</a>
-                            <a href="#program" className="hover:text-cyan-200">Program</a>
-                            <a href="#team" className="hover:text-cyan-200">Tim</a>
-                            <a href="#portfolio" className="hover:text-cyan-200">Portofolio</a>
-                            <a href="#contact" className="hover:text-cyan-200">Kontak</a>
-                        </div>
-
-                        <div className="flex items-center gap-2">
-                            {auth.user ? (
-                                <Link href="/umkm/dashboard" className="inline-flex items-center gap-2 rounded-md bg-cyan-400 px-4 py-2 text-sm font-bold text-slate-950">
-                                    Dashboard
-                                    <ArrowRight className="h-4 w-4" />
-                                </Link>
-                            ) : (
-                                <>
-                                    <Link href="/login" className="hidden rounded-md px-4 py-2 text-sm font-semibold text-white/75 hover:text-white sm:inline-flex">
-                                        Masuk
+                            <div className="flex items-center gap-3">
+                                {auth.user ? (
+                                    <Link href="/umkm/dashboard" className="rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-cyan-500/20">
+                                        Dashboard
                                     </Link>
-                                    {canRegister && (
-                                        <Link href="/register" className="inline-flex items-center gap-2 rounded-md bg-cyan-400 px-4 py-2 text-sm font-bold text-slate-950">
-                                            Daftar
-                                            <ArrowRight className="h-4 w-4" />
+                                ) : (
+                                    <>
+                                        <Link href="/login" className="px-4 py-2 text-sm font-medium text-slate-400 transition-colors hover:text-white">
+                                            Masuk
                                         </Link>
-                                    )}
-                                </>
-                            )}
+                                        {canRegister && (
+                                            <Link href="/register" className="rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-cyan-500/20">
+                                                Daftar Gratis
+                                            </Link>
+                                        )}
+                                    </>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </nav>
 
-                <main>
-                    <section className="relative min-h-[92vh] overflow-hidden bg-slate-950 pt-16 text-white">
-                        <img
-                            src="/images/impact-inc-logo.png"
-                            alt=""
-                            className="pointer-events-none absolute right-[-18%] top-20 w-[760px] max-w-none opacity-20 sm:right-[-8%] lg:right-[-2%] lg:top-8 lg:w-[900px]"
-                        />
-                        <div className="absolute inset-0 bg-[linear-gradient(90deg,#020617_0%,rgba(2,6,23,0.94)_40%,rgba(2,6,23,0.56)_100%)]" />
-                        <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,rgba(2,6,23,0)_0%,#f6fbfb_100%)]" />
-
-                        <div className="relative mx-auto grid min-h-[calc(92vh-64px)] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-                            <div className="max-w-3xl">
-                                <div className="mb-7 inline-flex items-center gap-2 border border-cyan-300/25 bg-cyan-300/10 px-3 py-2 text-sm font-semibold text-cyan-100">
-                                    <Rocket className="h-4 w-4" />
-                                    IMPACT Inc. Inkubator Startup
-                                </div>
-                                <h1 className="text-4xl font-black leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-                                    Kami bukan hanya membangun startup.
-                                    <span className="mt-3 block text-cyan-300">Kami membangun perusahaan berdampak.</span>
-                                </h1>
-                                <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-                                    Inkubator untuk founder yang ingin tumbuh cepat, menggalang pendanaan dengan cerdas, dan menciptakan dampak terukur melalui ekosistem end-to-end.
-                                </p>
-                                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                                    <Link href={primaryHref} className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-6 py-3 font-black text-slate-950 shadow-lg shadow-cyan-500/20">
-                                        Daftar Sekarang
-                                        <ArrowRight className="h-5 w-5" />
-                                    </Link>
-                                    <a href={secondaryHref} className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/5 px-6 py-3 font-bold text-white">
-                                        Lihat Perjalanan
-                                        <Compass className="h-5 w-5" />
-                                    </a>
-                                </div>
+                <section className="relative overflow-hidden border-b border-white/5 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_42%),linear-gradient(180deg,#020617_0%,#0f172a_100%)] px-5 py-20 sm:px-8 lg:py-28">
+                    <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+                        <div>
+                            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">
+                                <Sparkles className="h-4 w-4" />
+                                Powered by Inkubator Impact
                             </div>
 
-                            <div className="relative hidden min-h-[520px] lg:block">
-                                <img
-                                    src="/images/impact-inc-logo.png"
-                                    alt="Logo IMPACT Inc."
-                                    className="absolute left-1/2 top-1/2 w-[520px] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_30px_90px_rgba(34,211,238,0.25)]"
-                                />
-                            </div>
-                        </div>
-                    </section>
+                            <h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">
+                                Buat Konten{' '}
+                                <span className="bg-gradient-to-r from-blue-300 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                                    Promosi AI
+                                </span>
+                                <br className="hidden sm:block" />
+                                untuk Bisnis Anda
+                            </h1>
 
-                    <section className="relative -mt-10 px-4 sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl border border-slate-200 bg-white shadow-xl shadow-slate-950/5">
-                            <div className="grid gap-0 lg:grid-cols-[330px_1fr]">
-                                <div className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
-                                    <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Portofolio Impact</p>
-                                    <h2 className="mt-3 text-2xl font-black">Pencapaian startup dan sorotan ekosistem.</h2>
-                                </div>
-                                <div className="grid grid-cols-2 gap-px bg-slate-200 sm:grid-cols-3 lg:grid-cols-5">
-                                    {impactHighlights.map((item) => (
-                                        <div key={item} className="bg-white px-4 py-5 text-sm font-bold text-slate-700">
-                                            {item}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg lg:text-xl">
+                                Generate video promosi, poster menarik, dan copywriting yang menjual. Semua dibuat otomatis agar bisnis bisa tampil lebih profesional.
+                            </p>
 
-                    <section id="vision" className="px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-                            <div>
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Tentang & Visi</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Standar baru untuk inkubasi startup.</h2>
+                            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                                <Link href={dashboardHref} className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 px-8 py-4 text-base font-bold text-white transition-all hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-cyan-500/25">
+                                    <Zap className="h-5 w-5" />
+                                    Mulai Buat Konten AI
+                                </Link>
+                                <Link href={auth.user ? '/umkm/ai-mentor' : dashboardHref} className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-white/10 bg-white/5 px-8 py-4 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10">
+                                    <Bot className="h-5 w-5" />
+                                    Chat AI Mentor
+                                </Link>
                             </div>
-                            <div className="space-y-8 text-slate-700">
-                                <p className="text-lg leading-8">
-                                    IMPACT Inc. adalah inkubator berbasis founder yang menggabungkan akses modal, mentoring strategis, dan ruang kerja berkinerja tinggi untuk membangun perusahaan berdampak.
-                                </p>
-                                <div className="grid gap-4 sm:grid-cols-2">
-                                    <div className="border-l-4 border-cyan-500 bg-white p-6 shadow-sm">
-                                        <h3 className="font-black text-slate-950">Visi</h3>
-                                        <p className="mt-3 leading-7">Menjadi inkubator dampak paling terpercaya di Asia Tenggara, melahirkan founder yang bertumbuh secara bertanggung jawab dan menyelesaikan masalah nyata.</p>
-                                    </div>
-                                    <div className="border-l-4 border-amber-400 bg-white p-6 shadow-sm">
-                                        <h3 className="font-black text-slate-950">Misi</h3>
-                                        <p className="mt-3 leading-7">Menyediakan jalur terstruktur dan berkecepatan tinggi dari validasi hingga pendanaan dengan jaringan mentor dan investor global.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
 
-                    <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl">
-                            <div className="mb-10 max-w-2xl">
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Kenapa founder memilih IMPACT</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight">Berani, praktis, dan fokus pada traksi terukur.</h2>
-                            </div>
-                            <div className="grid gap-px bg-slate-200 md:grid-cols-2 lg:grid-cols-4">
-                                {reasons.map((reason) => (
-                                    <div key={reason.title} className="bg-white p-6">
-                                        <reason.icon className="h-8 w-8 text-cyan-700" />
-                                        <h3 className="mt-8 text-lg font-black">{reason.title}</h3>
-                                        <p className="mt-3 leading-7 text-slate-600">{reason.body}</p>
+                            <div className="mt-16 flex items-center gap-10 sm:gap-14">
+                                {[
+                                    { value: 'AI', label: 'Powered' },
+                                    { value: 'Cepat', label: 'Siap pakai' },
+                                    { value: '24/7', label: 'Tersedia' },
+                                ].map((stat) => (
+                                    <div key={stat.label}>
+                                        <p className="bg-gradient-to-b from-white to-slate-400 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">{stat.value}</p>
+                                        <p className="mt-1 text-xs font-medium text-slate-500 sm:text-sm">{stat.label}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    </section>
 
-                    <section id="journey" className="bg-slate-950 px-4 py-24 text-white sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl">
-                            <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-                                <div>
-                                    <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-300">Cara kerja</p>
-                                    <h2 className="mt-4 text-4xl font-black tracking-tight">Satu jalur jelas dari aplikasi hingga pendanaan.</h2>
-                                </div>
-                                <a href="#program" className="inline-flex w-fit items-center gap-2 rounded-md border border-white/15 px-5 py-3 font-bold">
-                                    Lihat Timeline
-                                    <ArrowRight className="h-4 w-4" />
-                                </a>
-                            </div>
-                            <div className="grid gap-px bg-white/10 lg:grid-cols-3">
-                                {workSteps.map((step) => (
-                                    <div key={step.number} className="bg-slate-950 p-7">
-                                        <p className="text-5xl font-black text-cyan-300/35">{step.number}</p>
-                                        <h3 className="mt-8 text-2xl font-black">{step.title}</h3>
-                                        <p className="mt-3 leading-7 text-white/65">{step.body}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="program" className="px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-                            <div className="bg-slate-950 p-8 text-white">
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-300">Program Inkubasi</p>
-                                <h2 className="mt-4 text-4xl font-black">Akselerasi 4-6 bulan untuk product-market fit dan kesiapan investor.</h2>
-                                <p className="mt-5 leading-8 text-white/70">
-                                    Track Akselerasi Founder menghadirkan modul terstruktur untuk validasi, pertumbuhan, dan pendanaan dengan sprint mingguan yang praktis.
-                                </p>
-                                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                                    <Link href={primaryHref} className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-5 py-3 font-black text-slate-950">
-                                        Daftar Sekarang
-                                        <ArrowRight className="h-4 w-4" />
-                                    </Link>
-                                    <a href="#journey" className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 px-5 py-3 font-bold">
-                                        Lihat Timeline
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="grid gap-4 sm:grid-cols-2">
-                                {['Penemuan Masalah & Market Fit', 'Go-to-Market & Distribusi', 'Strategi Pendanaan', 'Operasional & Tata Kelola'].map((item) => (
-                                    <div key={item} className="border border-slate-200 bg-white p-6 shadow-sm">
-                                        <Check className="h-6 w-6 text-cyan-700" />
-                                        <p className="mt-5 text-xl font-black">{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl">
-                            <div className="mb-10 max-w-3xl">
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Ekosistem</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight">Ekosistem menyatu, siap bertumbuh.</h2>
-                                <p className="mt-4 text-lg leading-8 text-slate-600">Modal, mentoring, workspace, dan komunitas dalam satu ekosistem.</p>
-                            </div>
-                            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-                                {ecosystem.map((item) => (
-                                    <div key={item.title} className="border border-slate-200 p-6">
-                                        <item.icon className="h-8 w-8 text-cyan-700" />
-                                        <h3 className="mt-8 text-lg font-black">{item.title}</h3>
-                                        <p className="mt-3 leading-7 text-slate-600">{item.body}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="team" className="px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl">
-                            <div className="mb-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-                                <div>
-                                    <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Tim IMPACT Inc.</p>
-                                    <h2 className="mt-4 text-4xl font-black tracking-tight">Penggerak Perubahan.</h2>
-                                </div>
-                                <p className="text-lg leading-8 text-slate-600">
-                                    Membangun fondasi kuat untuk masa depan ekosistem startup. Kami memadukan visi teknis, strategis, dan operasional.
-                                </p>
-                            </div>
-                            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-                                {team.map((member) => (
-                                    <div key={member.name} className="border border-slate-200 bg-white p-5 shadow-sm">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-50 font-black text-cyan-800">
-                                            {member.name.split(' ').map((part) => part[0]).slice(0, 2).join('')}
-                                        </div>
-                                        <h3 className="mt-6 font-black">{member.name}</h3>
-                                        <p className="mt-1 text-sm font-bold text-cyan-700">{member.role}</p>
-                                        <p className="mt-4 text-sm leading-6 text-slate-600">{member.body}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="bg-slate-950 px-4 py-24 text-white sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl">
-                            <div className="mb-12 max-w-2xl">
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-300">Timeline Perjalanan Startup</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight">Roadmap jelas dari ide hingga scale.</h2>
-                            </div>
-                            <div className="grid gap-px bg-white/10 md:grid-cols-5">
-                                {journey.map(([number, title, body]) => (
-                                    <div key={title} className="bg-slate-950 p-6">
-                                        <p className="text-4xl font-black text-cyan-300">{number}</p>
-                                        <h3 className="mt-8 text-xl font-black">{title}</h3>
-                                        <p className="mt-3 leading-7 text-white/62">{body}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="portfolio" className="bg-white px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl">
-                            <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-                                <div>
-                                    <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Portofolio Startup</p>
-                                    <h2 className="mt-4 text-4xl font-black tracking-tight">Traksi nyata di sektor kesehatan, finansial, edukasi, dan iklim.</h2>
-                                </div>
-                                <Award className="h-16 w-16 text-amber-400" />
-                            </div>
-                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-                                {portfolios.map((name) => (
-                                    <div key={name} className="border border-slate-200 p-5 text-center font-black">
-                                        {name}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto max-w-7xl">
-                            <div className="mb-10 max-w-2xl">
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Founder yang melaju lebih cepat</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight">Suara asli dari tim yang bertumbuh bersama IMPACT.</h2>
-                            </div>
-                            <div className="grid gap-5 lg:grid-cols-2">
-                                {testimonials.map((item) => (
-                                    <div key={item.name} className="border border-slate-200 bg-white p-7 shadow-sm">
-                                        <Quote className="h-8 w-8 text-cyan-700" />
-                                        <p className="mt-6 text-xl font-semibold leading-9 text-slate-800">"{item.quote}"</p>
-                                        <div className="mt-8 border-t border-slate-200 pt-5">
-                                            <p className="font-black">{item.name}</p>
-                                            <p className="text-sm font-semibold text-slate-500">{item.role}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-                            <div>
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Event & Workshop</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight">Bootcamp startup, klinik growth, dan meetup founder yang fokus pada traksi.</h2>
-                            </div>
-                            <div className="space-y-4">
-                                {events.map(([title, category, date]) => (
-                                    <div key={title} className="grid gap-4 border border-slate-200 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
+                        <div className="relative">
+                            <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-cyan-950/30 backdrop-blur">
+                                <div className="rounded-[1.4rem] bg-slate-900 p-5">
+                                    <div className="flex items-center justify-between border-b border-white/10 pb-4">
                                         <div>
-                                            <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-700">{category}</p>
-                                            <h3 className="mt-2 text-xl font-black">{title}</h3>
-                                            <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-slate-500">
-                                                <CalendarDays className="h-4 w-4" />
-                                                {date}
-                                            </p>
+                                            <p className="text-sm font-semibold text-slate-400">AI Studio</p>
+                                            <p className="text-xl font-black">Inkubator Impact</p>
                                         </div>
-                                        <Link href={primaryHref} className="inline-flex items-center gap-2 rounded-md bg-slate-950 px-4 py-2 text-sm font-bold text-white">
-                                            Daftar Sekarang
-                                            <ArrowRight className="h-4 w-4" />
-                                        </Link>
+                                        <div className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-bold text-emerald-300">Online</div>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
 
-                    <section className="px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
-                            <div className="lg:col-span-1">
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Jurnal & Platform Riset</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight">Template OJS modern dan sistem jurnal untuk mitra riset.</h2>
-                            </div>
-                            <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2">
-                                <div className="border border-slate-200 bg-white p-7">
-                                    <BookOpen className="h-8 w-8 text-cyan-700" />
-                                    <h3 className="mt-8 text-2xl font-black">Template OJS</h3>
-                                    <p className="mt-3 leading-7 text-slate-600">Template premium untuk keterbacaan, indexing, dan kredibilitas internasional.</p>
-                                </div>
-                                <div className="border border-slate-200 bg-white p-7">
-                                    <Layers className="h-8 w-8 text-amber-500" />
-                                    <h3 className="mt-8 text-2xl font-black">Dukungan Indexing</h3>
-                                    <p className="mt-3 leading-7 text-slate-600">Panduan DOAJ dan indexing internasional untuk meningkatkan dampak riset.</p>
+                                    <div className="mt-5 grid gap-4">
+                                        {features.slice(0, 3).map((feature) => (
+                                            <div key={feature.title} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                                                <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${feature.color}`}>
+                                                    <feature.icon className="h-6 w-6 text-white" />
+                                                </div>
+                                                <div>
+                                                    <p className="font-bold">{feature.title}</p>
+                                                    <p className="text-sm text-slate-500">Siap generate</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-5 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 p-5">
+                                        <p className="text-sm font-semibold text-white/70">Output hari ini</p>
+                                        <p className="mt-1 text-3xl font-black">Video, Poster, Caption</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    <section className="bg-slate-950 px-4 py-20 text-white sm:px-6 lg:px-8">
-                        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 lg:flex-row lg:items-center">
-                            <div>
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-300">Siap membangun sesuatu yang berdampak?</p>
-                                <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight">Gabung inkubator berbasis founder untuk scale impact.</h2>
-                            </div>
-                            <Link href={primaryHref} className="inline-flex w-fit items-center gap-2 rounded-md bg-cyan-400 px-6 py-3 font-black text-slate-950">
-                                Daftar Sekarang
-                                <ArrowRight className="h-5 w-5" />
-                            </Link>
+                <section className="px-5 py-20 sm:px-8 lg:py-28">
+                    <div className="mx-auto max-w-6xl">
+                        <div className="mb-14 text-center">
+                            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-cyan-300">Fitur Unggulan</p>
+                            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Fitur AI yang Powerful</h2>
+                            <p className="mx-auto max-w-xl text-base text-slate-400 sm:text-lg">
+                                Semua tools AI yang Anda butuhkan untuk membuat konten promosi profesional.
+                            </p>
                         </div>
-                    </section>
 
-                    <section id="contact" className="px-4 py-24 sm:px-6 lg:px-8">
-                        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-                            <div>
-                                <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-700">Daftar atau Bermitra</p>
-                                <h2 className="mt-4 text-4xl font-black tracking-tight">Ceritakan apa yang sedang Anda bangun.</h2>
-                                <p className="mt-5 text-lg leading-8 text-slate-600">Tim IMPACT Inc. akan menghubungi Anda segera.</p>
-                                <div className="mt-8 space-y-3 text-sm font-semibold text-slate-600">
-                                    <p className="flex items-center gap-3"><Mail className="h-5 w-5 text-cyan-700" /> hello@impactinc.id</p>
-                                    <p className="flex items-center gap-3"><Phone className="h-5 w-5 text-cyan-700" /> +62 812 3456 7890</p>
-                                    <p className="flex items-center gap-3"><MapPin className="h-5 w-5 text-cyan-700" /> Startup Workspace, Indonesia</p>
+                        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                            {features.map((feature) => (
+                                <div key={feature.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-cyan-400/30 hover:bg-white/[0.06]">
+                                    <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl ${feature.bg}`}>
+                                        <feature.icon className="h-7 w-7 text-cyan-300" />
+                                    </div>
+                                    <h3 className="mb-3 text-lg font-bold">{feature.title}</h3>
+                                    <p className="text-sm leading-relaxed text-slate-400">{feature.description}</p>
                                 </div>
-                            </div>
-                            <form className="border border-slate-200 bg-white p-6 shadow-sm">
-                                <div className="grid gap-4 sm:grid-cols-2">
-                                    <label className="block">
-                                        <span className="text-sm font-bold text-slate-700">Nama Depan</span>
-                                        <input className="mt-2 w-full border border-slate-200 px-4 py-3 outline-none focus:border-cyan-500" placeholder="Budi" />
-                                    </label>
-                                    <label className="block">
-                                        <span className="text-sm font-bold text-slate-700">Nama Belakang</span>
-                                        <input className="mt-2 w-full border border-slate-200 px-4 py-3 outline-none focus:border-cyan-500" placeholder="Santoso" />
-                                    </label>
-                                    <label className="block">
-                                        <span className="text-sm font-bold text-slate-700">Email</span>
-                                        <input type="email" className="mt-2 w-full border border-slate-200 px-4 py-3 outline-none focus:border-cyan-500" placeholder="budi@email.com" />
-                                    </label>
-                                    <label className="block">
-                                        <span className="text-sm font-bold text-slate-700">Nomor HP</span>
-                                        <input className="mt-2 w-full border border-slate-200 px-4 py-3 outline-none focus:border-cyan-500" placeholder="+62 812 3456 7890" />
-                                    </label>
-                                    <label className="block sm:col-span-2">
-                                        <span className="text-sm font-bold text-slate-700">Saya ingin</span>
-                                        <select className="mt-2 w-full border border-slate-200 px-4 py-3 outline-none focus:border-cyan-500">
-                                            <option>Bergabung Inkubator</option>
-                                            <option>Menjadi Mentor</option>
-                                            <option>Bermitra Program</option>
-                                            <option>Akses Riset & Jurnal</option>
-                                        </select>
-                                    </label>
-                                    <label className="block sm:col-span-2">
-                                        <span className="text-sm font-bold text-slate-700">Pesan</span>
-                                        <textarea className="mt-2 min-h-32 w-full border border-slate-200 px-4 py-3 outline-none focus:border-cyan-500" placeholder="Ceritakan kebutuhan Anda..." />
-                                    </label>
-                                </div>
-                                <button type="button" className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-5 py-3 font-black text-white">
-                                    Kirim Permintaan
-                                    <ArrowRight className="h-4 w-4" />
-                                </button>
-                            </form>
+                            ))}
                         </div>
-                    </section>
-                </main>
+                    </div>
+                </section>
 
-                <footer className="border-t border-slate-200 bg-white px-4 py-10 sm:px-6 lg:px-8">
-                    <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 sm:flex-row sm:items-center">
-                        <div className="flex items-center gap-3">
-                            <img src="/images/impact-inc-logo.png" alt="Logo IMPACT Inc." className="h-12 w-12 object-contain" />
-                            <div>
-                                <p className="font-black">IMPACT<span className="text-cyan-700">Inc.</span></p>
-                                <p className="text-sm font-medium text-slate-500">Inkubator Startup</p>
-                            </div>
+                <section className="border-y border-white/5 bg-slate-900/55 px-5 py-20 sm:px-8 lg:py-28">
+                    <div className="mx-auto max-w-6xl">
+                        <div className="mb-14 text-center">
+                            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-cyan-300">Cara Kerja</p>
+                            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Dari foto jadi konten siap promosi</h2>
                         </div>
-                        <p className="text-sm text-slate-500">2026 IMPACT Inc. Membangun perusahaan berdampak.</p>
+
+                        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                            {steps.map((step) => (
+                                <div key={step.number} className="rounded-2xl border border-white/10 bg-slate-950/70 p-6">
+                                    <p className="mb-6 text-4xl font-black text-cyan-400/40">{step.number}</p>
+                                    <h3 className="mb-3 text-lg font-bold">{step.title}</h3>
+                                    <p className="text-sm leading-relaxed text-slate-400">{step.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="border-y border-white/5 bg-slate-900/55 px-5 py-20 sm:px-8 lg:py-28">
+                    <div className="mx-auto max-w-6xl">
+                        <div className="mb-14 text-center">
+                            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-cyan-300">Testimoni</p>
+                            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Bisnis yang lebih siap promosi</h2>
+                        </div>
+
+                        <div className="grid gap-5 lg:grid-cols-3">
+                            {testimonials.map((item) => (
+                                <div key={item.name} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                                    <Quote className="mb-5 h-8 w-8 text-cyan-300" />
+                                    <p className="mb-6 leading-relaxed text-slate-300">"{item.quote}"</p>
+                                    <div className="flex items-center gap-1 text-amber-300">
+                                        {[...Array(5)].map((_, index) => (
+                                            <Star key={index} className="h-4 w-4 fill-current" />
+                                        ))}
+                                    </div>
+                                    <div className="mt-5 border-t border-white/10 pt-5">
+                                        <p className="font-bold">{item.name}</p>
+                                        <p className="text-sm text-slate-500">{item.role}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="px-5 py-20 text-center sm:px-8 lg:py-28">
+                    <div className="mx-auto max-w-3xl">
+                        <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500">
+                            <MessageCircle className="h-8 w-8 text-white" />
+                        </div>
+                        <h2 className="mb-5 text-3xl font-bold sm:text-5xl">Siap membuat konten promosi dengan AI?</h2>
+                        <p className="mx-auto mb-9 max-w-2xl text-lg leading-relaxed text-slate-400">
+                            Mulai generate video, poster, dan copywriting bersama Inkubator Impact.
+                        </p>
+                        <Link href={dashboardHref} className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 px-8 py-4 text-lg font-bold text-white transition-all hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-cyan-500/25">
+                            Mulai Sekarang
+                            <ArrowRight className="h-5 w-5" />
+                        </Link>
+                    </div>
+                </section>
+
+                <footer className="border-t border-white/5 px-5 py-10 sm:px-8">
+                    <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
+                        <Link href="/" className="flex items-center gap-2.5">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
+                                <Sparkles className="h-5 w-5 text-white" />
+                            </div>
+                            <span className="text-lg font-bold">
+                                Inkubator<span className="text-cyan-300">Impact</span>
+                            </span>
+                        </Link>
+                        <p className="text-sm text-slate-500">&copy; 2026 Inkubator Impact. AI Content Generator.</p>
                     </div>
                 </footer>
             </div>
